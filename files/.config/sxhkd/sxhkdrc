@@ -1,0 +1,96 @@
+#
+# wm independent hotkeys
+#
+
+# make sxhkd reload its configuration files:
+super + alt + Escape
+  pkill -USR1 -x sxhkd
+
+
+# terminal emulator
+super + {Return,t}
+  $TERMINAL
+
+# program launcher
+super + alt + @space
+  rofi -modi drun -show drun
+
+super + alt + Delete
+  arandr
+
+# region System Menus
+
+super + F12
+  $HOME/.local/bin/menu/system-rofi
+
+# endregion
+
+#region Apps
+# applications
+super + alt + f
+  $TERMINAL -e $HOME/.local/bin/fm 
+
+super + alt + m
+  $TERMINAL --class="musicplayer" -e $HOME/.local/bin/musicplayer
+
+super + alt + v
+  $TERMINAL --class="visualizer" -e $HOME/.local/bin/visualizer
+
+super + alt + b
+  $HOME/.local/bin/browser
+
+super + alt + c
+  /usr/bin/code
+
+super + alt + h
+  $TERMINAL -e htop
+
+super + alt + Pause
+  mpc toggle
+
+# endregion
+
+# region Multimedia
+
+XF86AudioPause
+  mpc toggle
+
+super + alt + Prior
+  mpc prev
+
+XF86AudioPrev
+  mpc prev
+
+super + alt + Next
+  mpc next
+
+XF86AudioNext
+  mpc next
+
+super + alt + Scroll_Lock
+  $HOME/.local/bin/vol toggle
+
+XF86AudioMute
+  $HOME/.local/bin/vol toggle
+
+super + alt + Home
+  $HOME/.local/bin/vol up
+
+XF86AudioRaiseVolume
+  $HOME/.local/bin/vol up
+
+super + alt + End
+  $HOME/.local/bin/vol down
+
+XF86AudioLowerVolume
+  $HOME/.local/bin/vol down
+
+XF86AudioPlay
+  mpc XF86AudioPlay
+
+XF86AudioStop
+  mpc stop
+
+super + alt + Insert
+  $TERMINAL -e $HOME/.local/bin/audiomixer
+# endregion
